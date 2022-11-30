@@ -10,8 +10,6 @@ class DeleteHTTP {
             headers: {
                 'Content-type': 'application/json'
             }
-            
-
         });
   
         // Awaiting for the resource to be deleted
