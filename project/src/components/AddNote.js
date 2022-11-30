@@ -22,7 +22,7 @@ const AddNote = (props) => {
     <form onSubmit={submitHandler}>
       <div>
         <label htmlFor="name">Note: </label>
-        <textarea rows="1" id="name" ref={textRef}></textarea>
+        <textarea rows="3" id="name" ref={textRef}></textarea>
       </div>
       <div>
         <label htmlFor="date">Date: </label>

@@ -7,7 +7,7 @@ const MainPage = () => {
   const [items, setItems] = useState([]);
   const history = useHistory();
 
-  const key = items.id;
+
 
   const fetchItems = async () => {
     const response = await fetch(
@@ -28,22 +28,7 @@ const MainPage = () => {
     setItems(fetchedItems);
   };
 
-  const deleteHandler = async () =>{
 
-  const response = await fetch(
-    "https://projekti-50a74-default-rtdb.europe-west1.firebasedatabase.app/notes.json/" + key,
-    {
-      method: "DELETE",
-      body: JSON.stringify(items),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    }
-  );
-  const data = await response.json();
-  console.log(data);
-  history.push("/");
-  }
 
   useEffect(() => {
     fetchItems();
@@ -57,8 +42,7 @@ const MainPage = () => {
       <>  
       <h1>Previous notes</h1>    
       <section>
-        <NoteList items = {items}
-        deleteHandler = {deleteHandler}/>
+        <NoteList items = {items}/>
       </section>
       <button onClick={addNew}>Add new note</button>
     </>
