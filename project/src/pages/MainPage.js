@@ -3,6 +3,7 @@ import NoteList from "../components/NoteList";
 import { useState } from "react";
 import { useEffect } from "react";
 
+
 const MainPage = () => {
   const [items, setItems] = useState([]);
   const history = useHistory();
