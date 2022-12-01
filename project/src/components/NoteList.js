@@ -1,14 +1,9 @@
 import DeleteHTTP from "./DeleteNote";
-import UpdateHTTP from "./UpdateNote";
-import AddItem from "../components/AddNote";
-
 const NoteList = (props) => {
 
 
   const http = new DeleteHTTP;
-  const updateNote = new UpdateHTTP;
   
-
   const deleteHandler = (key) =>{
     
     console.log("clicked! delete " + key);
