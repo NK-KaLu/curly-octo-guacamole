@@ -32,6 +32,8 @@ const updateHandler = async (items) => {
     "https://projekti-50a74-default-rtdb.europe-west1.firebasedatabase.app/notes/" + items.id +".json",
     {
       method: "PUT",
+      body: JSON.stringify({name:"tepsu on best",
+      date: "4-20-69"}),
       headers: {
         "Content-Type": "application/json",
       },
@@ -39,7 +41,9 @@ const updateHandler = async (items) => {
   );
   const data = await response.json();
   console.log(data);
+  window.location.reload()
 };
+  
 
 
    
