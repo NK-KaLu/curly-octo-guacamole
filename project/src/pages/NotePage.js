@@ -1,11 +1,8 @@
 import { useHistory } from "react-router-dom";
 import AddItem from "../components/AddNote";
 import "./NotePage.css"
-
 const NotePage = () => {
-
 const history = useHistory();
-
 const addItemsHandler = async (items) => {
   console.log(items);
   const response = await fetch(
@@ -22,7 +19,6 @@ const addItemsHandler = async (items) => {
   console.log(data);
   history.push("/");
 };
-
 return (
     <body className="body2">
     <div>
@@ -34,5 +30,4 @@ return (
     </body>
   );
 };
-
 export default NotePage;

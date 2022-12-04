@@ -1,8 +1,6 @@
-class DeleteHTTP {
-  
+class DeleteHTTP { 
     // Make an HTTP PUT Request
-    async delete(url) {
-  
+    async delete(url) {  
         // Awaiting fetch which contains 
         // method, headers and content-type
         const response = await fetch(url, {
@@ -10,8 +8,7 @@ class DeleteHTTP {
             headers: {
                 'Content-type': 'application/json'
             }
-        });
-  
+        });  
         // Awaiting for the resource to be deleted
         const resData = 'resource deleted...';
         // Return response data 
@@ -19,5 +16,4 @@ class DeleteHTTP {
         return resData;
     }
 }
-
 export default DeleteHTTP;

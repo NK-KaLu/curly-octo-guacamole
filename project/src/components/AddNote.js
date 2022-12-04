@@ -1,7 +1,5 @@
 import { useRef } from "react";
 import { useHistory } from "react-router-dom";
-
-
 const AddNote = (props) => {
   const history = useHistory();
   const textRef = useRef("");
@@ -13,18 +11,13 @@ const AddNote = (props) => {
       name: textRef.current.value,
       date: dateRef.current.value,
     };
-
     props.onAddItems(items);
-
     textRef.current.value = "";
-    dateRef.current.value = "";
-    
+    dateRef.current.value = "";  
   };
-
   const cancelHandler = () =>{
     history.push("/");
   }
-
   return (
     <form onSubmit={submitHandler}>
       <div>
@@ -43,5 +36,4 @@ const AddNote = (props) => {
     </form>
   );
 };
-
 export default AddNote;

@@ -4,13 +4,9 @@ import "./MainPage.css"
 import { useState } from "react";
 import { useEffect } from "react";
 
-
 const MainPage = () => {
   const [items, setItems] = useState([]);
   const history = useHistory();
-
-
-
   const fetchItems = async () => {
     const response = await fetch(
       "https://projekti-50a74-default-rtdb.europe-west1.firebasedatabase.app/notes.json"
@@ -25,21 +21,15 @@ const MainPage = () => {
         name: data[key].name,
         date: data[key].date,
       });
-    }
-  
+    } 
     setItems(fetchedItems);
   };
-
-
-
   useEffect(() => {
     fetchItems();
   }, []);
-
   const addNew = () => {
     history.push("/addnote");
   }
-
     return (
       <body className="body"> 
       <div>
@@ -54,5 +44,4 @@ const MainPage = () => {
     </body>
     );
   };
-  
   export default MainPage;
