@@ -1,5 +1,5 @@
 import DeleteHTTP from "./DeleteNote";
-
+import "./NoteList.css"
 
 const NoteList = (props) => {
 
@@ -15,14 +15,18 @@ const NoteList = (props) => {
 
 const updateHandler = async (items) => {
   console.log(items);
-  let person = prompt("Enter your changes", items.name);
-  let date = prompt("Change date", items.date);
-  if(person != null && date != null){
+  let note = prompt("Edit note", items.name);
+  if(note != null){
+  let dateOrg = items.date;
+  let date = prompt("Edit date", items.date);
+  if(date == null){
+    date = dateOrg;
+  }
   const response = await fetch(
     "https://projekti-50a74-default-rtdb.europe-west1.firebasedatabase.app/notes/" + items.id +".json",
     {
       method: "PUT",
-      body: JSON.stringify({name:person,
+      body: JSON.stringify({name:note,
       date: date}),
       headers: {
         "Content-Type": "application/json",
@@ -41,7 +45,7 @@ const updateHandler = async (items) => {
           
           <div>
             <p>
-              {items.date} {items.name} <button onClick={() => deleteHandler(items.id)}>Delete</button>  <button onClick={() => updateHandler(items)}>Update</button>
+              {items.date} {items.name} <button className="bdelete" onClick={() => deleteHandler(items.id)}>🗑️</button>  <button className="bedit" onClick={() => updateHandler(items)}>Edit ✎</button>
             </p>
           </div>
         ))}

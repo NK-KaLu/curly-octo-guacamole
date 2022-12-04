@@ -4,7 +4,7 @@ import "./Navigation.css";
 const Navigation = () => {
   return (
     <header className="header">
-      <h2>Navigation</h2>
+      <h2>Web Notes</h2>
       <nav>
         <ul>
           <li>

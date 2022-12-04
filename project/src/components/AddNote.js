@@ -1,8 +1,9 @@
 import { useRef } from "react";
+import { useHistory } from "react-router-dom";
 
 
 const AddNote = (props) => {
-
+  const history = useHistory();
   const textRef = useRef("");
   const dateRef = useRef("");
 
@@ -20,17 +21,25 @@ const AddNote = (props) => {
     
   };
 
+  const cancelHandler = () =>{
+    history.push("/");
+  }
+
   return (
     <form onSubmit={submitHandler}>
       <div>
         <label htmlFor="name">Note: </label>
-        <textarea required rows="3" id="name" ref={textRef}></textarea>
+        <textarea required rows="1" id="name" ref={textRef}></textarea>
       </div>
+      <br></br>
       <div>
         <label htmlFor="date">Date: </label>
         <input type="date" id="date" ref={dateRef} />
       </div>
-      <button>Submit</button>
+      <br></br>
+      <button class="bcancel" onClick={cancelHandler}>Cancel</button>
+      <button class="bsubmit">Submit</button>
+      
     </form>
   );
 };

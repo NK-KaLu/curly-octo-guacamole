@@ -1,5 +1,6 @@
 import { useHistory } from "react-router-dom";
 import AddItem from "../components/AddNote";
+import "./NotePage.css"
 
 const NotePage = () => {
 
@@ -23,12 +24,14 @@ const addItemsHandler = async (items) => {
 };
 
 return (
-    <>
-    <h2>Add new item</h2>    
+    <body className="body2">
+    <div>
+    <h1>Add Note</h1>    
       <section>
         <AddItem onAddItems={addItemsHandler}/>
       </section>
-    </>
+      </div>
+    </body>
   );
 };
 

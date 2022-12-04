@@ -1,5 +1,6 @@
 import { useHistory } from "react-router-dom";
 import NoteList from "../components/NoteList";
+import "./MainPage.css"
 import { useState } from "react";
 import { useEffect } from "react";
 
@@ -40,13 +41,17 @@ const MainPage = () => {
   }
 
     return (
-      <>  
-      <h1>Previous notes</h1>    
+      <body className="body"> 
+      <div>
+      <h1>Notes</h1>    
       <section>
         <NoteList items = {items}/>
       </section>
-      <button onClick={addNew}>Add new note</button>
-    </>
+      <br></br>
+      <br></br>
+      <button className="b1" onClick={addNew}>Add new note ➕</button>
+      </div> 
+    </body>
     );
   };
   
