@@ -6,7 +6,7 @@ const history = useHistory();
 const addItemsHandler = async (items) => {
   console.log(items);
   const response = await fetch(
-    "https://projekti-50a74-default-rtdb.europe-west1.firebasedatabase.app/notes.json",
+    "/*FIREBASE OSOITE*//notes.json",
     {
       method: "POST",
       body: JSON.stringify(items),
