@@ -9,7 +9,7 @@ const MainPage = () => {
   const history = useHistory();
   const fetchItems = async () => {
     const response = await fetch(
-      "https://projekti-50a74-default-rtdb.europe-west1.firebasedatabase.app/notes.json"
+      "/*FIREBASE OSOITE*//notes.json"
     );
     const data = await response.json();
   
